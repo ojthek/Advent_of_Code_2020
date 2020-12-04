@@ -11,7 +11,7 @@ for line in file:
     pwLen = len(elems["password"])
     subLen = len(elems["password"].replace(elems["letter"], ""))
     resLen = pwLen - subLen
-    if (int(elems["min"]) <= resLen) & (int(elems["max"]) >= resLen):
+    if (int(elems["min"]) <= resLen) and (int(elems["max"]) >= resLen):
         goodOnes += 1
     else:
         badOnes += 1

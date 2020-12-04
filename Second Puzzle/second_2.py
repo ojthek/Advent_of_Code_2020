@@ -8,9 +8,9 @@ badOnes = 0
 file = open("input2.txt", "r")
 for line in file:
     elems = elemPattern.match(line).groupdict()
-    if (elems["password"][int(elems["first"])-1] == elems["letter"]) & (elems["password"][int(elems["second"])-1] == elems["letter"]):
+    if (elems["password"][int(elems["first"])-1] == elems["letter"]) and (elems["password"][int(elems["second"])-1] == elems["letter"]):
         badOnes += 1
-    elif (elems["password"][int(elems["first"])-1] == elems["letter"]) | (elems["password"][int(elems["second"])-1] == elems["letter"]):
+    elif (elems["password"][int(elems["first"])-1] == elems["letter"]) or (elems["password"][int(elems["second"])-1] == elems["letter"]):
         goodOnes += 1
     else:
         badOnes += 1
