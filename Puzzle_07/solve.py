@@ -23,8 +23,8 @@ def calcCosts(l, findColor):
 rLine = re.compile(r'^(?P<color>[a-z]+ [a-z]+) bag[s]? contain (?P<bags>.*)[.]$')
 rBags = re.compile(r'(?P<count>[0-9]+) (?P<color>[a-z]+ [a-z]+) bag[s]?')
 
-#file = open("input7_example.txt", "r")
-file = open("input7.txt", "r")
+#file = open("input_example.txt", "r")
+file = open("input.txt", "r")
 
 colorBags = dict()
 
