@@ -13,7 +13,6 @@ def setMask(cmd):
 
 
 def setMem(cmd):
-    print("setMem")
     global memory, memory2
     val = re.match(r'^mem\[(?P<id>[0-9]+)\] = (?P<value>[0-9]+)$', cmd).groupdict()
     memory[val["id"]] = trans(int(val["value"]))
@@ -48,7 +47,6 @@ def trans2(value):
     global mask
     mm = []
     multipyMask(mm)
-    print(mm)
     res = []
     for m in mm:
         a = util.int2ba(value, length=36)
@@ -65,23 +63,18 @@ CMD = {
 
 
 for cmd in fileinput.input():
-    print(cmd.strip())
     CMD[cmd[0:3]](cmd.strip())
-
-
-print(mask)
-pprint.pprint(memory2)
 
 sum = 0
 for key, val in memory.items():
     sum += util.ba2int(val)
-print(sum)
+
+print("Processing 1:", sum)
 
 mm = []
-print(multipyMask(mm))
-print(mm)
+multipyMask(mm)
 
 sum = 0
 for key, val in memory2.items():
     sum += val
-print(sum)
+print("Prozessing 2:", sum)
